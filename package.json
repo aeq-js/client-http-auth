@@ -1,0 +1,19 @@
+{
+  "name": "@aeq/client-http-auth",
+  "version": "0.0.1",
+  "description": "Client api http authentification implementation",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aeq-js/client-http-auth.git"
+  },
+  "author": "D3-FC <d3-fc@mail.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aeq-js/client-http-auth/issues"
+  },
+  "homepage": "https://github.com/aeq-js/client-http-auth#readme"
+}
