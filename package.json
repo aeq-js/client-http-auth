@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/aeq-js/client-http-auth/issues"
   },
-  "homepage": "https://github.com/aeq-js/client-http-auth#readme"
+  "homepage": "https://github.com/aeq-js/client-http-auth#readme",
+  "dependencies": {
+    "@aeq/executors": "^0.0.1",
+    "typedi": "^0.8.0"
+  }
 }

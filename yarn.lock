@@ -2,3 +2,12 @@
 # yarn lockfile v1
 
 
+"@aeq/executors@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@aeq/executors/-/executors-0.0.1.tgz#372ef5999577108f7686c3ee7103c3418498ac7f"
+  integrity sha512-5pWJ81NLDrVkSSN4udzk/gah2t0aeQ/NXzfMpempIINhK39bQBaQ/K0jk5WnBtl30PI0e7oV8M/Mra+0b4WiKg==
+
+typedi@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/typedi/-/typedi-0.8.0.tgz#d8e203bd1d41a96e2b0a5c6295147d74b2b2d03e"
+  integrity sha512-/c7Bxnm6eh5kXx2I+mTuO+2OvoWni5+rXA3PhXwVWCtJRYmz3hMok5s1AKLzoDvNAZqj/Q/acGstN0ri5aQoOA==
