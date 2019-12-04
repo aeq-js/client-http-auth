@@ -73,8 +73,8 @@ export class Auth<U> {
     this.storage.setItem(ACCESS_TOKEN_KEY, v)
   }
 
-  getAccessToken(): string{
-    return  this.storage.getItem(ACCESS_TOKEN_KEY) ||''
+  getAccessToken (): string {
+    return this.storage.getItem(ACCESS_TOKEN_KEY) || ''
   }
 
   async checkIsAuthorized (): Promise<boolean> {
@@ -92,6 +92,13 @@ export class Auth<U> {
     this.authToken = await this.userRepo.login(cred.username, cred.password)
     this.accessToken = this.authToken.access_token
     await this.fetchUser.run()
+  }
+
+  async register (user: User): Promise<(U & User)> {
+    this.logout()
+    await this.userRepo.register(user)
+    await this.login(user)
+    return this.currentUser as (U & User)
   }
 
   async logout (): Promise<void> {
