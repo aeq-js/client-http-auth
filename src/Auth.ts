@@ -88,6 +88,7 @@ export class Auth<U> {
   }
 
   async login (cred: AuthLoginCredential): Promise<void> {
+    this.logout()
     this.authToken = await this.userRepo.login(cred.username, cred.password)
     this.accessToken = this.authToken.access_token
     await this.fetchUser.run()
