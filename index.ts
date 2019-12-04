@@ -1,5 +1,4 @@
 import { Auth, LoggerService, StorageService, UserRepoService } from './src/Auth'
-import { AuthServiceProvider } from './src/AuthServiceProvider'
 import { AuthToken } from './src/AuthToken'
 import { BearerCredential } from './src/BearerCredential'
 import { Logger } from './src/Logger'
@@ -8,7 +7,6 @@ import { UserRepo } from './src/UserRepo'
 
 export {
   Auth,
-  AuthServiceProvider,
   AuthToken,
   BearerCredential,
   Logger,
