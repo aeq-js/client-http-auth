@@ -4,6 +4,7 @@ import { Logger } from './Logger'
 import { Inject, Service, Token } from 'typedi'
 import { UserRepo } from './UserRepo'
 import { User } from './User'
+import {UnauthorizedError} from '@aeq/http-errors'
 
 export enum AuthStatus {
   Authorized = 'Authorized',
@@ -75,6 +76,14 @@ export class Auth<U> {
 
   getAccessToken (): string {
     return this.storage.getItem(ACCESS_TOKEN_KEY) || ''
+  }
+
+  getUser (): (U & User) | null {
+    return this.currentUser
+  }
+  getUserOrFail (): (U & User) {
+    if(!this.currentUser) throw new UnauthorizedError()
+    return this.currentUser
   }
 
   async checkIsAuthorized (): Promise<boolean> {
