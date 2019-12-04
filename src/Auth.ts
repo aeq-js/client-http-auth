@@ -1,7 +1,7 @@
 import { AuthToken } from './AuthToken'
 import { CacheExecutor } from '@aeq/executors'
 import { Logger } from './Logger'
-import { Inject, Service } from 'typedi'
+import { Inject, Service, Token } from 'typedi'
 import { UserRepo } from './UserRepo'
 import { User } from './User'
 
@@ -25,13 +25,17 @@ export type AuthLoginCredential = {
   password: string
 }
 
+export const UserRepoService = new Token<UserRepo>()
+export const StorageService = new Token<Storage>()
+export const LoggerService = new Token<Logger>()
+
 @Service()
 export class Auth<U> {
-  @Inject('userRepo')
+  @Inject(UserRepoService)
   private userRepo!: UserRepo
-  @Inject('localStorage')
+  @Inject(StorageService)
   private storage!: Storage
-  @Inject('logger')
+  @Inject(LoggerService)
   private logger: Logger | null = null
 
   private authToken?: AuthToken

@@ -4,20 +4,24 @@ import { Container, Service } from 'typedi'
 @Service()
 export class AuthServiceProvider {
 
+//  @Inject('http')
+//  http: any
+
   boot ({ store }: { store: any }) {
-    store.auth = Container.get(Auth)
-
-    const axiosInstance: any = Container.get('http')
+//    const repo = Container.get('userRepo')
+//    console.log('repo', repo)
     const auth = Container.get(Auth)
-
-    axiosInstance.interceptors.request.use(config => {
-      const token = auth.getAccessToken()
-      if (token) {
-        config.headers['Authorization'] = `Bearer ${auth.getAccessToken()}`
-      }
-      return config
-    }, function (error: any) {
-      return Promise.reject(error)
-    })
+    store.auth = auth
+//    this.http.interceptors.request.use((config: any) => {
+//      const token = auth.getAccessToken()
+//      if (token) {
+//        config.headers['Authorization'] = `Bearer ${auth.getAccessToken()}`
+//      }
+//      return config
+//    }, function (error: any) {
+//      return Promise.reject(error)
   }
+
+)
+}
 }
