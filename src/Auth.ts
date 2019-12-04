@@ -139,11 +139,6 @@ export class Auth<U> {
       return
     }
 
-    this.logger.user = {
-      id: user.id,
-      username: user.email,
-      fist_name: user.first_name,
-      last_name: user.last_name
-    }
+    this.logger.user = user
   }
 }
