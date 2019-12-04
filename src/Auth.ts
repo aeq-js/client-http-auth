@@ -69,6 +69,10 @@ export class Auth<U> {
     this.storage.setItem(ACCESS_TOKEN_KEY, v)
   }
 
+  getAccessToken(): string{
+    return  this.storage.getItem(ACCESS_TOKEN_KEY) ||''
+  }
+
   async checkIsAuthorized (): Promise<boolean> {
     if (this.wasRun) return this.isAuthorized
     await this.fetchUser.run()
