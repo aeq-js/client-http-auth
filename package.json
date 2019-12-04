@@ -1,6 +1,6 @@
 {
   "name": "@aeq/client-http-auth",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Client api http authentification implementation",
   "main": "index.ts",
   "scripts": {
